@@ -10,7 +10,7 @@ body{
 }
 
 .mycol{
-    height: 550px;
+    height: min-content;
     border-radius: 20px;
     box-shadow: 2px 2px 25px black;
 }
@@ -45,9 +45,9 @@ input:focus{
 
 }
 
-.col2{
+/* .col2{
     height: 100px;
-}
+} */
 
 .google-btn{
     background-color: transparent;

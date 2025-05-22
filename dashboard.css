@@ -1,0 +1,36 @@
+.myborder{
+    border: 2px solid black;
+}
+
+.mycol{
+    height: max-content;
+}
+
+.input{
+    border: 1px solid black;
+    height: 40px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.mycol1{
+    height: fit-content;
+}
+
+.myrow{
+    height: fit-content;
+}
+
+.img{
+     width: 10vw;
+    height: 10vw; /* Match width */
+    border-radius: 50%;
+    border: 2px solid black;
+    object-fit: cover;
+}
+
+.datadiv{
+    width: 30vw;
+    height: 10vw;
+}

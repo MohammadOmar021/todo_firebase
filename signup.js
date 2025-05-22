@@ -1,4 +1,4 @@
-import { auth, getAuth, createUserWithEmailAndPassword, addDoc, setDoc, doc, db} from "./firebase.js";
+import { auth, getAuth, createUserWithEmailAndPassword, addDoc, setDoc, doc, db,updateProfile } from "./firebase.js";
 
 
 let signup = document.getElementById("signup")
@@ -12,8 +12,14 @@ let saveusertodb =async (user)=>{
             uid: user.uid
         });
         console.log("Document written with ID: ", user.uid);
-        location="dashboard.html"
+        
         console.log("User data Added to db")
+
+         await updateProfile(user, {
+      displayName: fullname.value
+      
+    });
+    location="dashboard.html"
       } catch (e) {
         console.error("Error adding document: ", e);
       }

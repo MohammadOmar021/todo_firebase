@@ -10,14 +10,14 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
   <div class="container">
-    <div class="row d-flex flex-column justify-content-center align-items-center">
+    <div class="row d-flex flex-column justify-content-center align-items-center min-vh-100">
         <div class="row d-flex justify-content-center mt-5 myborder myrow">
-            <div class="col-lg-6 col-md-6 col-sm-12 mycol1 myborder d-flex align-items-center justify-content-evenly">
+            <div class="col-lg-6 col-md-6 col-sm-12 mycol1 myborder d-flex align-items-center justify-content-evenly flex-wrap">
                <div class="image-skeleton" id="img-div">
 
                     </div>
@@ -25,14 +25,14 @@
                   <div class="img d-flex justify-content-center align-items-center fs-6 flex-column" id="img">
                     
                     
-                        <img src="https://ursmindfully.com/wp-content/uploads/2020/08/Profile-Icon-SVG-09856789.png" alt="" class="img-fluid" >
+                        <img src="https://ursmindfully.com/wp-content/uploads/2020/08/Profile-Icon-SVG-09856789.png" alt="" class="img-fluid">
 </div>
 
                 </div>
                 <div class="data-skeleton" id="data-div">
 
                 </div>
-                <div class="data myborder datadiv d-flex align-items-start justify-content-center flex-column " >
+                <div class="data myborder datadiv d-flex align-items-start justify-content-center flex-column flex-nowrap" >
                     <div class="name" id="userName">
 
                     </div>
@@ -58,13 +58,13 @@
         </div>
         <div class="row myborder myrow d-flex justify-content-center mt-2">
             <div class="col-lg-6 col-md-6 col-sm-12 myborder mycol">
-                    <div class="mt-3 d-flex justify-content-around">
+                    <div class="mt-3 d-flex justify-content-around align-items-center">
                         <input type="text" class="input w-75" id="inputdiv">
-                        <button type="button" class="btn btn-success btn-sm" id="addtask">Add Task</button>
+                        <button type="button" class="btn btn-success btn-sm addTaskBtn" id="addtask">Add Task</button>
 
                     </div>
                     <div >
-                        <ol id="taskdiv">
+                        <ol id="taskdiv" >
                             
                         </ol>
                         <div id="skeletonLoader">

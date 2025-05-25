@@ -113,10 +113,10 @@ const unsubscribe = onSnapshot(collection(db, "Tasks"), (snapshot) => {
      taskdiv.innerHTML+=` <li class="task-item d-flex justify-content-between align-items-center" style="width: 100%; padding: 10px; border-bottom: 1px solid #ccc;">
     <span>${data.Task}</span>
     <div>
-      <input type="checkbox" class="btn-check btn-sm" id="btncheck1-${doc.id}"  onchange="toggleCheckbox('${doc.id}', this.checked)" ${doc.completed ? checked : ""}>
-  <label class="btn btn-outline-primary" for="btncheck1-${doc.id}" )">Completed</label>
-    <button type="button" class="btn btn-warning btn-sm" onclick="editTodo('${doc.id}')">Edit</button>
-    <button type="button" class="btn btn-danger btn-sm" onclick="deleteTodo('${doc.id}')">Delete</button>
+       <input type="checkbox" class="btn-check btn-sm" id="btncheck1-${doc.id}" onchange="toggleCheckBox('${doc.id}')"  ${doc.data().completed ? "checked" : ""}>
+      <label class="btn btn-outline-primary" for="btncheck1-${doc.id}" )"><i class="fa-solid fa-check-double"></i></label>
+    <button type="button" class="btn btn-warning btn-sm" onclick="editTodo('${doc.id}')"><i class="fa-solid fa-pen-to-square"></i></button>
+    <button type="button" class="btn btn-danger btn-sm" onclick="deleteTodo('${doc.id}')"><i class="fa-solid fa-trash"></i></button>
     </div>
   </li>`;
   });
@@ -126,15 +126,8 @@ const unsubscribe = onSnapshot(collection(db, "Tasks"), (snapshot) => {
 
  }
 
-async function toggleCheckbox(id, completed){
-  
-   try{
-    const taskRef = doc(db, "Tasks", id)
-    await updateDoc(taskRef, {
-      completed: completed,
-      
-    });
-    Swal.fire({
+let toggleCheckBox = async (id)=>{
+  Swal.fire({
   toast: true,
   position: 'top-end',
   icon: 'success',
@@ -143,12 +136,15 @@ async function toggleCheckbox(id, completed){
   timer: 1500,
   timerProgressBar: true
 });
-   }
-   catch(e){
-    console.log(e)
-   }
+    const dbRef = doc(db, "Tasks", id);
+    await updateDoc(dbRef, {
+      
+  completed: true
+  
+});
+
 }
-window.toggleCheckbox = toggleCheckbox;
+window.toggleCheckBox=toggleCheckBox;
  let deleteTodo = async (id)=>{
     try{
          Swal.fire({
@@ -202,4 +198,4 @@ window.toggleCheckbox = toggleCheckbox;
 
  window.editTodo = editTodo;
 
- console.log(window.toastr)
+//  console.log(window.toastr)
